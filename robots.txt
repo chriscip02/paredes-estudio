@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estudiojuridicoparedes.com.ar/sitemap.xml
