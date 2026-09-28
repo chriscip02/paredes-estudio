@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Página no encontrada | PAREDES. Estudio Jurídico</title>
+
+  <meta
+    name="robots"
+    content="noindex, follow"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0F1B2D"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FAF9F6;
+      color: #0F1B2D;
+    }
+
+    header {
+      padding: 28px 6%;
+      border-bottom: 1px solid #E8E6E1;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-dot {
+      color: #C9B18A;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      color: #5f6670;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 6%;
+    }
+
+    .error-content {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .error-code {
+      margin: 0 0 12px;
+      color: #C9B18A;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1.08;
+    }
+
+    .error-text {
+      max-width: 590px;
+      margin: 0 0 32px;
+      color: #505862;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid #0F1B2D;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .button-primary {
+      background: #0F1B2D;
+      color: #FAF9F6;
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      background: #25354b;
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: #0F1B2D;
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
+      background: #E8E6E1;
+    }
+
+    footer {
+      padding: 24px 6%;
+      border-top: 1px solid #E8E6E1;
+      color: #6b7077;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 22px 6%;
+      }
+
+      main {
+        padding: 50px 6%;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <p class="brand">
+      PAREDES<span class="brand-dot">.</span>
+      <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
+    </p>
+  </header>
+
+  <main>
+    <section class="error-content" aria-labelledby="error-title">
+
+      <p class="error-code">ERROR 404</p>
+
+      <h1 id="error-title">
+        La página que buscás no existe
+      </h1>
+
+      <p class="error-text">
+        Es posible que la dirección sea incorrecta o que el contenido
+        haya cambiado de ubicación. Podés volver al inicio o consultar
+        nuestros artículos jurídicos.
+      </p>
+
+      <div class="actions">
+        <a
+          class="button button-primary"
+          href="/"
+        >
+          Volver al inicio
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="/articulos/"
+        >
+          Ver artículos
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    PAREDES. Estudio Jurídico
+  </footer>
+
+</body>
+</html>
