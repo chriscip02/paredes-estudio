@@ -55,6 +55,12 @@ document
   .querySelectorAll(".case-card a")
   .forEach((link) => {
     link.addEventListener("click", (event) => {
+
+      // Los enlaces a páginas reales navegan normalmente.
+      if (link.getAttribute("href") !== "#contacto") {
+        return;
+      }
+
       event.preventDefault();
 
       const card = link.closest(".case-card");
