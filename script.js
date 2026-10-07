@@ -489,3 +489,134 @@ if (yearElement) {
   yearElement.textContent =
     new Date().getFullYear();
 }
+// ======================================================
+// CARRUSEL DE ARTÍCULOS DE LA HOME
+// ======================================================
+
+(() => {
+  const track = document.querySelector("#home-articles-track");
+
+  if (!track) return;
+
+  const section = track.closest("#articulos");
+
+  if (!section) return;
+
+  const controls = section.querySelector(
+    ".articles-carousel-controls"
+  );
+  const previous = section.querySelector("[data-articles-prev]");
+  const next = section.querySelector("[data-articles-next]");
+  const cards = [...track.querySelectorAll(".article-card")];
+
+  if (!controls || !previous || !next || !cards.length) return;
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  let positions = [];
+  let currentIndex = 0;
+  let settleTimer;
+
+  function updateControls() {
+    controls.hidden =
+      track.scrollWidth - track.clientWidth <= 2;
+
+    previous.disabled = currentIndex === 0;
+    next.disabled = currentIndex >= positions.length - 1;
+  }
+
+  function syncPosition() {
+    if (!positions.length) return;
+
+    let nearest = 0;
+
+    positions.forEach((position, index) => {
+      if (
+        Math.abs(position - track.scrollLeft) <
+        Math.abs(positions[nearest] - track.scrollLeft)
+      ) {
+        nearest = index;
+      }
+    });
+
+    currentIndex = nearest;
+    updateControls();
+  }
+
+  function measure() {
+    const maximum = Math.max(
+      0,
+      track.scrollWidth - track.clientWidth
+    );
+
+    const start = cards[0].offsetLeft;
+
+    positions = cards
+      .map((card) => Math.min(
+        maximum,
+        Math.max(0, card.offsetLeft - start)
+      ))
+      .filter((position, index, all) =>
+        index === 0 || position - all[index - 1] > 2
+      );
+
+    syncPosition();
+  }
+
+  function move(direction) {
+    window.clearTimeout(settleTimer);
+
+    currentIndex = Math.max(
+      0,
+      Math.min(
+        positions.length - 1,
+        currentIndex + direction
+      )
+    );
+
+    track.scrollTo({
+      left: positions[currentIndex],
+      behavior: reducedMotion.matches ? "instant" : "smooth"
+    });
+
+    updateControls();
+  }
+
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+
+  track.addEventListener("scroll", () => {
+    window.clearTimeout(settleTimer);
+
+    settleTimer = window.setTimeout(syncPosition, 180);
+  }, { passive: true });
+
+  track.addEventListener("keydown", (event) => {
+    if (event.target !== track) return;
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      move(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      move(1);
+    }
+  });
+
+  if ("ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(track);
+  } else {
+    window.addEventListener("resize", measure);
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(measure);
+  }
+
+  measure();
+})();

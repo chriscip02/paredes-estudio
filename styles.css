@@ -76,3 +76,243 @@
       flex-shrink: 0;
     }
   }
+  /* ======================================================
+   CARRUSEL DE ARTÍCULOS DE LA HOME
+   ====================================================== */
+
+/* Controles */
+#articulos .articles-carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+#articulos .articles-carousel-controls[hidden] {
+  display: none;
+}
+
+#articulos .articles-carousel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid var(--sand);
+  background: transparent;
+  color: var(--sand);
+  font-size: 24px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+#articulos .articles-carousel-button:hover:not(:disabled) {
+  background: var(--sand);
+  color: var(--navy);
+}
+
+#articulos .articles-carousel-button:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+/* Tres tarjetas visibles en escritorio */
+#articulos .articles-carousel {
+  display: grid;
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 36px) / 3);
+  align-items: stretch;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 6px 0 18px;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sand) var(--navy2);
+}
+
+#articulos .articles-carousel > .article-card {
+  min-width: 0;
+  scroll-snap-align: start;
+  overflow-wrap: break-word;
+}
+
+/* Barra de desplazamiento */
+#articulos .articles-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+#articulos .articles-carousel::-webkit-scrollbar-track {
+  background: var(--navy2);
+}
+
+#articulos .articles-carousel::-webkit-scrollbar-thumb {
+  background: var(--sand);
+  border-radius: 6px;
+}
+
+/* Navegación con teclado */
+#articulos .articles-carousel:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: -2px;
+}
+
+#articulos .articles-carousel-button:focus-visible,
+#articulos .articles-carousel .article-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* La primera tarjeta siempre tiene color arena */
+#home-articles-track > .article-card:first-child {
+  background: var(--sand);
+  color: var(--navy);
+}
+
+#home-articles-track > .article-card:first-child .article-meta {
+  color: rgba(15, 27, 45, .58);
+}
+
+#home-articles-track > .article-card:first-child p {
+  color: rgba(15, 27, 45, .68);
+}
+
+#home-articles-track > .article-card:first-child .article-link {
+  border-color: rgba(15, 27, 45, .2);
+}
+
+/* Dos tarjetas visibles en tablet */
+@media (max-width: 950px) {
+  #articulos .articles-carousel {
+    grid-auto-columns: calc((100% - 18px) / 2);
+  }
+}
+
+/* Una tarjeta y parte de la siguiente en celular */
+@media (max-width: 640px) {
+  #articulos .articles-carousel {
+    grid-auto-columns: 86%;
+  }
+
+  #articulos .articles-carousel > .article-card {
+    padding: 24px;
+  }
+}
+/* Flechas minimalistas sobre los bordes del carrusel */
+
+#articulos .articles-carousel-wrapper {
+  position: relative;
+}
+
+#articulos .articles-carousel-controls {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  margin: 0;
+  pointer-events: none;
+}
+
+#articulos .articles-carousel-controls[hidden] {
+  display: none;
+}
+
+#articulos .articles-carousel-button {
+  position: absolute;
+  top: calc(50% - 6px);
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 64px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--sand);
+  box-shadow: none;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: color .2s;
+}
+
+#articulos .articles-carousel-button svg {
+  display: block;
+  width: 20px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#articulos [data-articles-prev] {
+  left: -16px;
+  background: linear-gradient(
+    to right,
+    var(--navy) 45%,
+    transparent
+  );
+}
+
+#articulos [data-articles-next] {
+  right: -16px;
+  background: linear-gradient(
+    to left,
+    var(--navy) 45%,
+    transparent
+  );
+}
+
+#articulos .articles-carousel-button:hover:not(:disabled) {
+  color: var(--white);
+}
+
+#articulos .articles-carousel-button:disabled {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  #articulos [data-articles-prev] {
+    left: -8px;
+  }
+
+  #articulos [data-articles-next] {
+    right: -8px;
+  }
+}
+/* Ocultar la barra y conservar el desplazamiento */
+#articulos .articles-carousel {
+  scrollbar-width: none;
+}
+
+#articulos .articles-carousel::-webkit-scrollbar {
+  display: none;
+}
+/* Evitar que el gesto salte varias tarjetas */
+#articulos .articles-carousel > .article-card {
+  scroll-snap-stop: always;
+}
+/* Primera tarjeta del índice destacada automáticamente */
+
+.articles-index-grid > .article-card:first-child {
+  background: var(--sand);
+  color: var(--navy);
+}
+
+.articles-index-grid > .article-card:first-child .article-meta {
+  color: rgba(15, 27, 45, .58);
+}
+
+.articles-index-grid > .article-card:first-child p {
+  color: rgba(15, 27, 45, .68);
+}
+
+.articles-index-grid > .article-card:first-child .article-link {
+  border-color: rgba(15, 27, 45, .2);
+}
