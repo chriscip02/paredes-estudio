@@ -49,3 +49,30 @@
 .floating-button:hover {
   background: #1EBE5D;
 }
+
+/* Menú móvil: fondo completo y navegación legible */
+@media (max-width: 950px) {
+    .header,
+    .header.scrolled {
+      height: 72px;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  
+    body.menu-open .header {
+      background: var(--navy);
+    }
+  
+    .navigation {
+      inset: 72px 0 auto;
+      height: calc(100vh - 72px);
+      height: calc(100dvh - 72px);
+      background: var(--navy);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  
+    .navigation > a {
+      flex-shrink: 0;
+    }
+  }
