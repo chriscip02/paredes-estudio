@@ -89,65 +89,6 @@ if (lawyerLink) {
 }
 
 // ======================================================
-// FORMULARIO DE CONTACTO A WHATSAPP
-// ======================================================
-
-const contactForm =
-  document.querySelector("#contact-form");
-
-const formStatus =
-  document.querySelector("#form-status");
-
-if (contactForm) {
-  contactForm.addEventListener(
-    "submit",
-    (event) => {
-      event.preventDefault();
-
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
-
-      const formData =
-        new FormData(contactForm);
-
-      const name =
-        formData.get("nombre")?.trim();
-
-      const phone =
-        formData.get("telefono")?.trim();
-
-      const email =
-        formData.get("email")?.trim();
-
-      const consultation =
-        formData.get("consulta")?.trim();
-
-      let message =
-        `Hola, soy ${name}.\n\n` +
-        `Quisiera realizar una consulta con ` +
-        `PAREDES. Estudio Jurídico.\n\n` +
-        `Teléfono: ${phone}\n`;
-
-      if (email) {
-        message += `Email: ${email}\n`;
-      }
-
-      message +=
-        `\nMi consulta:\n${consultation}`;
-
-      if (formStatus) {
-        formStatus.textContent =
-          "Abriendo WhatsApp con tu consulta...";
-      }
-
-      openWhatsApp(message);
-    }
-  );
-}
-
-// ======================================================
 // CALCULADORA ORIENTATIVA DE INDEMNIZACIÓN ART
 // ======================================================
 
