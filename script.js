@@ -9,7 +9,33 @@ const WHATSAPP_NUMBER = "5491141937153";
 const DEFAULT_MESSAGE =
   "Hola, quisiera realizar una consulta con PAREDES. Estudio Jurídico.";
 
-function openWhatsApp(message = DEFAULT_MESSAGE) {
+// Un solo evento por apertura desde los botones del sitio.
+// No se envían el mensaje ni los datos de la calculadora.
+function trackWhatsAppClick(contactLocation) {
+  if (typeof window.gtag !== "function") return;
+
+  try {
+    window.gtag("event", "whatsapp_click", {
+      send_to: "G-R6PEJ52KYV",
+      contact_location: contactLocation,
+      page_path: window.location.pathname,
+      transport_type: "beacon"
+    });
+  } catch (_) {
+    // La medición no debe impedir abrir WhatsApp.
+  }
+}
+
+function getWhatsAppLocation(link) {
+  if (link.classList.contains("floating-button")) return "floating";
+  if (link.classList.contains("nav-contact")) return "navigation";
+  if (link.closest(".hero")) return "hero";
+  if (link.closest("#contacto")) return "contact";
+  if (link.closest("#servicios")) return "services";
+  return "content";
+}
+
+function openWhatsApp(message = DEFAULT_MESSAGE, contactLocation = "general") {
   if (
     !WHATSAPP_NUMBER ||
     WHATSAPP_NUMBER.includes("X")
@@ -24,6 +50,8 @@ function openWhatsApp(message = DEFAULT_MESSAGE) {
   const whatsappURL =
     `https://wa.me/${WHATSAPP_NUMBER}` +
     `?text=${encodeURIComponent(message)}`;
+
+  trackWhatsAppClick(contactLocation);
 
   window.open(
     whatsappURL,
@@ -43,7 +71,7 @@ document
       const customMessage =
         link.dataset.message || DEFAULT_MESSAGE;
 
-      openWhatsApp(customMessage);
+      openWhatsApp(customMessage, getWhatsAppLocation(link));
     });
   });
 
@@ -57,7 +85,7 @@ document
     link.addEventListener("click", (event) => {
 
       // Los enlaces a páginas reales navegan normalmente.
-      if (link.getAttribute("href") !== "#contacto") {
+      if (link.classList.contains("whatsapp-link") || link.getAttribute("href") !== "#contacto") {
         return;
       }
 
@@ -70,7 +98,8 @@ document
         "una consulta jurídica";
 
       openWhatsApp(
-        `Hola, quisiera consultar por esta situación: ${caseTitle}.`
+        `Hola, quisiera consultar por esta situación: ${caseTitle}.`,
+        "case_card"
       );
     });
   });
@@ -80,11 +109,11 @@ document
 const lawyerLink =
   document.querySelector(".lawyer a");
 
-if (lawyerLink) {
+if (lawyerLink && !lawyerLink.classList.contains("whatsapp-link")) {
   lawyerLink.addEventListener("click", (event) => {
     event.preventDefault();
 
-    openWhatsApp(DEFAULT_MESSAGE);
+    openWhatsApp(DEFAULT_MESSAGE, "lawyer");
   });
 }
 
@@ -246,7 +275,7 @@ if (calculatorWhatsApp) {
         )}\n\n` +
         "Quisiera consultar mi caso y verificar este cálculo.";
 
-      openWhatsApp(message);
+      openWhatsApp(message, "calculator");
     }
   );
 }
