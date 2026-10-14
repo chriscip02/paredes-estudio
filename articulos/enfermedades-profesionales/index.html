@@ -55,7 +55,7 @@
 
   <!-- CSS -->
 
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=20261014-armonia">
 
 
   <!-- DATOS ESTRUCTURADOS -->
@@ -88,7 +88,7 @@
 </head>
 
 
-<body>
+<body class="site-page editorial-page">
 
 
 <a class="skip-link" href="#contenido">
@@ -97,55 +97,24 @@
 
 
 <header class="header" id="inicio">
-
-  <div class="container header-inner">
-
-    <a class="brand" href="/" aria-label="Paredes Estudio Jurídico, inicio">
-
-      <span class="brand-name">
-        PAREDES<span>.</span>
-      </span>
-
-      <span class="brand-subtitle">
-        ESTUDIO JURÍDICO
-      </span>
-
-    </a>
-
-
-    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">
-      <span></span>
-      <span></span>
-    </button>
-
-
-    <nav class="navigation" id="navigation">
-
-      <a href="/#casos">
-        Cómo podemos ayudarte
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Paredes Estudio Jurídico, inicio">
+        <span class="brand-name">PAREDES<span>.</span></span>
+        <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
       </a>
-
-      <a href="/#proceso">
-        Cómo trabajamos
-      </a>
-
-      <a href="/#calculadora">
-        Calculadora
-      </a>
-
-      <a href="/articulos/">
-        Artículos
-      </a>
-
-      <a class="nav-contact whatsapp-link" href="https://wa.me/5491141937153">
-        Consultar ahora
-      </a>
-
-    </nav>
-
-  </div>
-
-</header>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="navigation" id="navigation" aria-label="Navegación principal">
+        <a href="/art/">ART</a>
+        <a href="/#casos">Servicios</a>
+        <a href="/#estudio">El estudio</a>
+        <a href="/#calculadora">Calculá tu indemnización</a>
+        <a href="/articulos/">Artículos</a>
+        <a class="nav-contact whatsapp-link" href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20con%20PAREDES.%20Estudio%20Jur%C3%ADdico." data-message="Hola, quisiera realizar una consulta con PAREDES. Estudio Jurídico." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+      </nav>
+    </div>
+  </header>
 
 
 
@@ -180,6 +149,7 @@
           <div>
             <span>AUTOR</span>
             <strong>Christian Paredes</strong>
+            <small class="article-author-credential">Abogado · Universidad de Buenos Aires</small>
           </div>
 
           </div>
@@ -284,7 +254,7 @@
 <p>Si falta documentación, identificá cuál es y quién podría tenerla para revisar cómo incorporarla al reclamo.</p>
 <aside class="article-cta">
   <p>Para consultar tu situación, podés acceder al <a href="/art/">asesoramiento en reclamos ART</a> de PAREDES. Estudio Jurídico.</p>
-  <a class="button button-sand whatsapp-link" href="https://wa.me/5491141937153">Consultar por WhatsApp</a>
+  <a class="button button-sand whatsapp-link" href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20con%20PAREDES.%20Estudio%20Jur%C3%ADdico." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
 </aside>
 <div class="article-related">
 
@@ -313,69 +283,25 @@
 
 
 <footer class="footer">
-
-  <div class="container footer-main">
-
-    <a class="brand" href="/">
-
-      <span class="brand-name">
-        PAREDES<span>.</span>
-      </span>
-
-      <span class="brand-subtitle">
-        ESTUDIO JURÍDICO
-      </span>
-
-    </a>
-
-
-    <p>
-      Asesoramiento jurídico claro, cercano y profesional.
-    </p>
-
-
-    <nav>
-
-      <a href="/#casos">
-        Áreas
+    <div class="container footer-main">
+      <a class="brand" href="/" aria-label="Paredes Estudio Jurídico, inicio">
+        <span class="brand-name">PAREDES<span>.</span></span>
+        <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
       </a>
-
-      <a href="/#estudio">
-        El estudio
-      </a>
-
-      <a href="/articulos/">
-        Artículos
-      </a>
-
-      <a href="/#contacto">
-        Contacto
-      </a>
-
-    </nav>
-
-  </div>
-
-
-  <div class="container footer-bottom">
-
-    <p>
-      © <span id="year"></span>
-      PAREDES. Estudio Jurídico
-    </p>
-
-    <p>
-      La información publicada es general y no constituye
-      asesoramiento jurídico.
-    </p>
-
-  </div>
-
-</footer>
+      <p>Asesoramiento jurídico en CABA.<br>Atención presencial y virtual.</p>
+      <nav aria-label="Navegación del pie de página">
+        <a href="/art/">ART</a><a href="/#casos">Servicios</a><a href="/#estudio">El estudio</a><a href="/articulos/">Artículos</a><a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> PAREDES. Estudio Jurídico</p>
+      <p>La información publicada es general y no constituye asesoramiento jurídico.</p>
+    </div>
+  </footer>
 
 
 
-<a class="floating-button whatsapp-link" href="https://wa.me/5491141937153" aria-label="Consultar por WhatsApp">
+<a class="floating-button whatsapp-link" href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20con%20PAREDES.%20Estudio%20Jur%C3%ADdico." aria-label="Consultar por WhatsApp" target="_blank" rel="noopener noreferrer">
 
   <svg viewbox="0 0 32 32" aria-hidden="true">
 
@@ -388,7 +314,7 @@
 </a>
 
 
-<script src="/script.js?v=20261014-ga4"></script>
+<script src="/script.js?v=20261014-armonia"></script>
 
 
 </body>

@@ -47,8 +47,8 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="art.css">
+  <link rel="stylesheet" href="/styles.css?v=20261014-armonia">
+  <link rel="stylesheet" href="/art/art.css?v=20261014-armonia">
 
   <script type="application/ld+json">
   {
@@ -135,9 +135,12 @@
     ]
   }
   </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
-<body class="art-page">
+<body class="site-page art-page">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="header" id="inicio">
@@ -146,28 +149,16 @@
         <span class="brand-name">PAREDES<span>.</span></span>
         <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
       </a>
-
-      <button
-        class="menu-button"
-        type="button"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="navigation"
-      >
-        <span></span>
-        <span></span>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">
+        <span></span><span></span>
       </button>
-
-      <nav class="navigation" id="navigation">
-        <a href="/">Inicio</a>
-        <a href="#situaciones">Cómo podemos ayudarte</a>
-        <a href="#preguntas">Preguntas frecuentes</a>
+      <nav class="navigation" id="navigation" aria-label="Navegación principal">
+        <a href="/art/">ART</a>
+        <a href="/#casos">Servicios</a>
+        <a href="/#estudio">El estudio</a>
+        <a href="/#calculadora">Calculá tu indemnización</a>
         <a href="/articulos/">Artículos</a>
-        <a
-          class="nav-contact whatsapp-link"
-          href="#"
-          data-message="Hola, quisiera consultar por un problema con mi ART o un accidente de trabajo."
-        >Consultar ahora</a>
+        <a class="nav-contact whatsapp-link" href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20consultar%20por%20un%20problema%20con%20mi%20ART%20o%20un%20accidente%20de%20trabajo." data-message="Hola, quisiera consultar por un problema con mi ART o un accidente de trabajo." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -201,9 +192,9 @@
             <div class="hero-actions">
               <a
                 class="button button-sand whatsapp-link"
-                href="#"
+                href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20consultar%20por%20un%20problema%20con%20mi%20ART%20o%20un%20accidente%20de%20trabajo."
                 data-message="Hola, quisiera consultar por un problema con mi ART o un accidente de trabajo."
-              >
+               target="_blank" rel="noopener noreferrer">
                 Consultar por WhatsApp <span>↗</span>
               </a>
 
@@ -237,9 +228,9 @@
             </p>
             <a
               class="card-action whatsapp-link"
-              href="#"
+              href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20contarles%20mi%20situaci%C3%B3n%20con%20la%20ART%20y%20saber%20c%C3%B3mo%20puedo%20avanzar."
               data-message="Hola, quisiera contarles mi situación con la ART y saber cómo puedo avanzar."
-            >
+             target="_blank" rel="noopener noreferrer">
               <span>Quiero consultar mi caso</span>
               <strong>↗</strong>
             </a>
@@ -380,9 +371,9 @@
 
           <a
             class="button button-outline whatsapp-link"
-            href="#"
+            href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20consultar%20c%C3%B3mo%20puedo%20avanzar%20con%20mi%20problema%20ante%20la%20ART."
             data-message="Hola, quisiera consultar cómo puedo avanzar con mi problema ante la ART."
-          >
+           target="_blank" rel="noopener noreferrer">
             Consultar mi caso <span>↗</span>
           </a>
         </div>
@@ -492,9 +483,9 @@
         <div class="art-final-cta-action">
           <a
             class="button button-sand whatsapp-link"
-            href="#"
+            href="https://wa.me/5491141937153?text=Hola%2C%20tuve%20un%20accidente%20laboral%20o%20un%20problema%20con%20mi%20ART%20y%20quisiera%20consultar%20mi%20caso."
             data-message="Hola, tuve un accidente laboral o un problema con mi ART y quisiera consultar mi caso."
-          >
+           target="_blank" rel="noopener noreferrer">
             Consultar por WhatsApp <span>↗</span>
           </a>
           <small>Atención en CABA y consultas virtuales.</small>
@@ -505,21 +496,15 @@
 
   <footer class="footer">
     <div class="container footer-main">
-      <a class="brand" href="/">
+      <a class="brand" href="/" aria-label="Paredes Estudio Jurídico, inicio">
         <span class="brand-name">PAREDES<span>.</span></span>
         <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
       </a>
-
-      <p>Asesoramiento jurídico claro, cercano y profesional.</p>
-
-      <nav>
-        <a href="/">Inicio</a>
-        <a href="/#estudio">El estudio</a>
-        <a href="/articulos/">Artículos</a>
-        <a href="/#contacto">Contacto</a>
+      <p>Asesoramiento jurídico en CABA.<br>Atención presencial y virtual.</p>
+      <nav aria-label="Navegación del pie de página">
+        <a href="/art/">ART</a><a href="/#casos">Servicios</a><a href="/#estudio">El estudio</a><a href="/articulos/">Artículos</a><a href="/#contacto">Contacto</a>
       </nav>
     </div>
-
     <div class="container footer-bottom">
       <p>© <span id="year"></span> PAREDES. Estudio Jurídico</p>
       <p>La información publicada es general y no constituye asesoramiento jurídico.</p>
@@ -528,16 +513,16 @@
 
   <a
     class="floating-button whatsapp-link"
-    href="#"
+    href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20consultar%20por%20un%20problema%20con%20mi%20ART%20o%20un%20accidente%20de%20trabajo."
     aria-label="Consultar por WhatsApp"
     data-message="Hola, quisiera consultar por un problema con mi ART o un accidente de trabajo."
-  >
+   target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 32 32" aria-hidden="true">
       <path d="M27.3 4.7A15.4 15.4 0 0 0 3.1 23.3L1 31l7.9-2.1A15.4 15.4 0 0 0 27.3 4.7Zm-11 23.7a12.8 12.8 0 0 1-6.5-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5a12.8 12.8 0 1 1 10.7 6Zm7-9.6c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2l-1.2 1.5c-.2.3-.5.3-.9.1-2.3-1.1-3.9-2.1-5.5-4.7-.4-.7.4-.7 1.1-2.2.1-.3.1-.5 0-.7l-1.2-3c-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-1.3 1.4-2 3.7-.5 6.7 1.8 3.6 4.6 6.3 8.1 7.8 3 1.3 4.2 1.4 5.7.9.9-.3 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5Z"/>
     </svg>
     <span>WhatsApp</span>
   </a>
 
-  <script src="../script.js?v=20261014-ga4"></script>
+  <script src="/script.js?v=20261014-armonia"></script>
 </body>
 </html>

@@ -28,165 +28,39 @@
     name="theme-color"
     content="#0F1B2D"
   >
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      margin: 0;
-      min-height: 100%;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #FAF9F6;
-      color: #0F1B2D;
-    }
-
-    header {
-      padding: 28px 6%;
-      border-bottom: 1px solid #E8E6E1;
-    }
-
-    .brand {
-      margin: 0;
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    .brand-dot {
-      color: #C9B18A;
-    }
-
-    .brand-subtitle {
-      display: block;
-      margin-top: 4px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      color: #5f6670;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 70px 6%;
-    }
-
-    .error-content {
-      width: 100%;
-      max-width: 700px;
-    }
-
-    .error-code {
-      margin: 0 0 12px;
-      color: #C9B18A;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-    }
-
-    h1 {
-      margin: 0 0 20px;
-      font-size: clamp(2rem, 5vw, 3.8rem);
-      line-height: 1.08;
-    }
-
-    .error-text {
-      max-width: 590px;
-      margin: 0 0 32px;
-      color: #505862;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 22px;
-      border: 1px solid #0F1B2D;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
-    }
-
-    .button-primary {
-      background: #0F1B2D;
-      color: #FAF9F6;
-    }
-
-    .button-primary:hover,
-    .button-primary:focus-visible {
-      background: #25354b;
-    }
-
-    .button-secondary {
-      background: transparent;
-      color: #0F1B2D;
-    }
-
-    .button-secondary:hover,
-    .button-secondary:focus-visible {
-      background: #E8E6E1;
-    }
-
-    footer {
-      padding: 24px 6%;
-      border-top: 1px solid #E8E6E1;
-      color: #6b7077;
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 22px 6%;
-      }
-
-      main {
-        padding: 50px 6%;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=20261014-armonia">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
-<body>
+<body class="site-page error-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <header>
-    <p class="brand">
-      PAREDES<span class="brand-dot">.</span>
-      <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
-    </p>
+  <header class="header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Paredes Estudio Jurídico, inicio">
+        <span class="brand-name">PAREDES<span>.</span></span>
+        <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="navigation" id="navigation" aria-label="Navegación principal">
+        <a href="/art/">ART</a>
+        <a href="/#casos">Servicios</a>
+        <a href="/#estudio">El estudio</a>
+        <a href="/#calculadora">Calculá tu indemnización</a>
+        <a href="/articulos/">Artículos</a>
+        <a class="nav-contact whatsapp-link" href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20con%20PAREDES.%20Estudio%20Jur%C3%ADdico." data-message="Hola, quisiera realizar una consulta con PAREDES. Estudio Jurídico." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="contenido" class="error-main"><div class="container">
     <section class="error-content" aria-labelledby="error-title">
 
       <p class="error-code">ERROR 404</p>
@@ -201,16 +75,16 @@
         nuestros artículos jurídicos.
       </p>
 
-      <div class="actions">
+      <div class="error-actions">
         <a
-          class="button button-primary"
+          class="button button-sand"
           href="/"
         >
           Volver al inicio
         </a>
 
         <a
-          class="button button-secondary"
+          class="button button-outline"
           href="/articulos/"
         >
           Ver artículos
@@ -218,11 +92,26 @@
       </div>
 
     </section>
-  </main>
+  </div></main>
 
-  <footer>
-    PAREDES. Estudio Jurídico
+  <footer class="footer">
+    <div class="container footer-main">
+      <a class="brand" href="/" aria-label="Paredes Estudio Jurídico, inicio">
+        <span class="brand-name">PAREDES<span>.</span></span>
+        <span class="brand-subtitle">ESTUDIO JURÍDICO</span>
+      </a>
+      <p>Asesoramiento jurídico en CABA.<br>Atención presencial y virtual.</p>
+      <nav aria-label="Navegación del pie de página">
+        <a href="/art/">ART</a><a href="/#casos">Servicios</a><a href="/#estudio">El estudio</a><a href="/articulos/">Artículos</a><a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> PAREDES. Estudio Jurídico</p>
+      <p>La información publicada es general y no constituye asesoramiento jurídico.</p>
+    </div>
   </footer>
 
+<a class="floating-button whatsapp-link" href="https://wa.me/5491141937153?text=Hola%2C%20quisiera%20realizar%20una%20consulta%20con%20PAREDES.%20Estudio%20Jur%C3%ADdico." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27.3 4.7A15.4 15.4 0 0 0 3.1 23.3L1 31l7.9-2.1A15.4 15.4 0 0 0 27.3 4.7Zm-11 23.7a12.8 12.8 0 0 1-6.5-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5a12.8 12.8 0 1 1 10.7 6Zm7-9.6c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2l-1.2 1.5c-.2.3-.5.3-.9.1-2.3-1.1-3.9-2.1-5.5-4.7-.4-.7.4-.7 1.1-2.2.1-.3.1-.5 0-.7l-1.2-3c-.3-.7-.7-.6-.9-.6h-.8c-.3 0-.7.1-1.1.5-1.3 1.4-2 3.7-.5 6.7 1.8 3.6 4.6 6.3 8.1 7.8 3 1.3 4.2 1.4 5.7.9.9-.3 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5Z"/></svg><span>WhatsApp</span></a>
+  <script src="/script.js?v=20261014-armonia"></script>
 </body>
 </html>
